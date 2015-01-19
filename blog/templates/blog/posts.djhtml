@@ -1,10 +1,47 @@
-
 {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<h1>{{post.title_text}}</h1>
-<ul>
-  <body>
-    <p>
-      {{post.content}}
-    </p>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Programmer Plebeian | {{post.title_text}}</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="{% static '//fonts.googleapis.com/css?family=Raleway:400,300,600' %}" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{% static 'blog/normalize.css' %}"/>
+  <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{% static 'blog/images/favicon.png' %}"/>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="eleven columns" style="margin: 100px; margin-top: 10%">
+        <h4>{{post.title_text}}</h4>
+        <p>{{post.content}}</p>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
