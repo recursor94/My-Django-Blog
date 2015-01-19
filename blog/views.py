@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Hello world, you're at a test page.")
+
+def view_post(request, post_id):
+    return HttpResponse("This is post %s." % post_id)
