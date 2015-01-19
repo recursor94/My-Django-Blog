@@ -1,23 +1,17 @@
 {% load staticfiles %}
-<header>
-  <title>Programmer Plebeian</title>
-  <h1>Welcome to Programmer Plebeian </h1>
-  <h2>A Budding Programmer's Paradise</h2>
+  <!-- <h1>Welcome to Programmer Plebeian </h1>
+  <h2>A Budding Programmer's Paradise</h2> -->
 
-</header>
-
-
-
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Programmer Plebeian</title>
+  <meta name="" content="">
+  <meta name="author" content="Andrew Spano">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -25,25 +19,17 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="{% static '//fonts.googleapis.com/css?family=Raleway:400,300,600' %}" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="{% static 'blog/normalize.css' %}"/>
+  <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <ul>
-  {% if latest_post_list %}
-  {% for post in latest_post_list %}
-     <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
-  {% endfor %}
-  </ul>
-  {% else %}
-     <p>There is no blog post available here</p>
-  {% endif %}
+  <link rel="icon" type="image/png" href="{% static 'blog/images/favicon.png' %}"/>
+
 
 </head>
 <body>
@@ -52,9 +38,20 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+      <div class="eleven columns">
+        <h1>Programmer Plebeian</h1>
+
+	<ul>
+	  {% if latest_post_list %}
+	  {% for post in latest_post_list %}
+	  <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
+	  {% endfor %}
+	</ul>
+	{% else %}
+	<p>There is no blog post available here</p>
+	{% endif %}
+	Hello World!!
+
       </div>
     </div>
   </div>
