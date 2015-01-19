@@ -37,10 +37,10 @@
   
   <div class="container">
     <div class="row">
-      <div class="two columns">
-	<h1>Programmer Plebeian</h1>
+      <div class="four columns">
+	<h5>Programmer Plebeian</h5>
       </div>
-      <div id="nav" class="nine columns">
+      <div id="nav" class="seven columns">
 	<ul>
 	  <li><a href="#">Home</a></li>
 	  <li><a href="#">About</a></li>

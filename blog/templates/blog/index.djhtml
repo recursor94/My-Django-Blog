@@ -25,6 +25,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="{% static 'blog/normalize.css' %}"/>
   <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}"/>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -38,19 +39,29 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="eleven columns">
-        <h1>Programmer Plebeian</h1>
-
+      <div class="four columns">
+	<h5>Programmer Plebeian</h5>
+      </div>
+      <div id="nav" class="seven columns">
 	<ul>
+	  <li><a href="#">Home</a></li>
+	  <li><a href="#">About</a></li>
+	  <li><a href="#">Blog</a></li>
+	  <li><a href="#">Contact</a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="eleven columns">
+       	<ul>
 	  {% if latest_post_list %}
 	    {% for post in latest_post_list %}
-	      <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
+	      <li><a href="{% url 'blog:view_post' post.id %}">{{post.title_text}}</a></li>
 	    {% endfor %}
 	</ul>
 	{% else %}
 	<p>There is no blog post available here</p>
 	{% endif %}
-	Hello World!!
 
       </div>
     </div>
