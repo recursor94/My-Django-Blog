@@ -39,8 +39,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="four columns">
-	<h5>Programmer Plebeian</h5>
+      <div id=titlelink class="four columns">
+	<h5><a href="/blog/">Programmer Plebeian</a></h5>
       </div>
       <div id="nav" class="seven columns">
 	<ul>
@@ -52,17 +52,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="eleven columns">
-       	<ul>
-	  {% if latest_post_list %}
-	    {% for post in latest_post_list %}
-	      <li><a href="{% url 'blog:view_post' post.id %}">{{post.title_text}}</a></li>
-	    {% endfor %}
-	</ul>
-	{% else %}
-	<p>There is no blog post available here</p>
-	{% endif %}
-
+      <div id="postindex" class="eleven columns">
+       	  <ul>
+	    {% if latest_post_list %}
+	      {% for post in latest_post_list %}
+		<li><a href="{% url 'blog:view_post' post.id %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
+	      {% endfor %}
+	  </ul>
+	    {% else %}
+	  <p>There is no blog post available here</p>
+	    {% endif %}
+	</section>
       </div>
     </div>
   </div>
