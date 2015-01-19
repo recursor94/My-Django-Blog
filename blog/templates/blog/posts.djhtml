@@ -37,20 +37,20 @@
   
   <div class="container">
     <div class="row">
-      <div class="four columns">
-	<h5>Programmer Plebeian</h5>
+      <div id=titlelink class="four columns">
+	<h5><a href="/blog/">Programmer Plebeian</a></h5>
       </div>
       <div id="nav" class="seven columns">
 	<ul>
-	  <li><a href="#">Home</a></li>
-	  <li><a href="#">About</a></li>
-	  <li><a href="#">Blog</a></li>
-	  <li><a href="#">Contact</a></li>
+	  <li><a href="/blog/">Home</a></li>
+	  <li><a href="/blog/about">About</a></li>
+	  <li><a href="/blog/">Blog</a></li>
+	  <li><a href="/blog/contact">Contact</a></li>
 	</ul>
       </div>
     </div>
     <div class="row">
-      <div class="eleven columns" style="margin: 100px; margin-top: 10%">
+      <div id=postarea class="eleven columns">
         <h4>{{post.title_text}}</h4>
         <p>{{post.content}}</p>
       </div>

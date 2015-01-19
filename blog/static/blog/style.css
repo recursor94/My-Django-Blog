@@ -59,3 +59,7 @@ margin:100px
 #titlelink a:hover {
     text-decoration: underline;
 }
+
+#postarea {
+    margin-top: 50px;
+}
