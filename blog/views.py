@@ -7,7 +7,7 @@ from django.template import RequestContext, loader
 def index(request):
     latest_post_list = Post.objects.order_by('-pub_date')[:5]
     template = loader.get_template('blog/index.html')
-    context = {'latest_question_list': latest_question_list}
+    context = {'latest_post_list': latest_post_list}
     return render(request, 'blog/index.html', context)
 
 def view_post(request, post_id):
@@ -16,5 +16,5 @@ def view_post(request, post_id):
 
     except Post.DoesNotExist:
         raise Http404("Post does not exist")
-    return render(request, 'blog/posts.html', {'content':post.content})
+    return render(request, 'blog/posts.html', {'post': post})
     
