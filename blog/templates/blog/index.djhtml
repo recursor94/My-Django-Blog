@@ -43,9 +43,9 @@
 
 	<ul>
 	  {% if latest_post_list %}
-	  {% for post in latest_post_list %}
-	  <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
-	  {% endfor %}
+	    {% for post in latest_post_list %}
+	      <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
+	    {% endfor %}
 	</ul>
 	{% else %}
 	<p>There is no blog post available here</p>

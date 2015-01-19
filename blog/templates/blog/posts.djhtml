@@ -22,6 +22,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="{% static 'blog/normalize.css' %}"/>
   <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
+  <link rel="stylesheet" href="{% static 'blog/style.css' %}"/>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -32,23 +33,32 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div id="nav" class="eleven columns">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
+
   
   <div class="container">
+    <div class="row">
+      <div class="two columns">
+	<h1>P-P</h1>
+      </div>
+      <div id="nav" class="nine columns">
+	<ul>
+	  <li><a href="#">Home</a></li>
+	  <li><a href="#">About</a></li>
+	  <li><a href="#">Blog</a></li>
+	  <li><a href="#">Contact</a></li>
+	</ul>
+      </div>
+    </div>
     <div class="row">
       <div class="eleven columns" style="margin: 100px; margin-top: 10%">
         <h4>{{post.title_text}}</h4>
         <p>{{post.content}}</p>
       </div>
     </div>
+    
+    
   </div>
+
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
