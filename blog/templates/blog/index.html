@@ -1,9 +1,14 @@
 {% load staticfiles %}
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'/>
 <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}"/>
+<header>
+  <title>Programmer Plebeian</title>
+  <h1>Welcome to Programmer Plebeian </h1>
+  <h2>A Budding Programmer's Paradise</h2>
 
-{% if latest_post_list %}
+</header>
 <ul>
+  {% if latest_post_list %}
   {% for post in latest_post_list %}
      <li><a href="{% url 'blog:view_post' post.id %}">{{post.content}}</a></li>
   {% endfor %}
