@@ -52,7 +52,7 @@
     <div class="row">
       <div id=postarea class="eleven columns">
         <h4>{{post.title_text}}</h4>
-        <p>{{post.content}}</p>
+        <p>{{post.content|safe}}</p>
       </div>
     </div>
     
