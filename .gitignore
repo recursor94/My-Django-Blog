@@ -90,5 +90,5 @@ docs/_build/
 target/
 
 venv
-*.pyc
+
 staticfiles
