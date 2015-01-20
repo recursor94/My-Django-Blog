@@ -31,7 +31,9 @@ a#blogtitle  {
 
 }
 #postindex {
-margin:25px
+    /*margin:25px*/
+    text-align:center;
+
 
 }
 
