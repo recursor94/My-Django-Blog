@@ -89,6 +89,8 @@ docs/_build/
 # PyBuilder
 target/
 
+*.pyc
+
 venv
 
 staticfiles
