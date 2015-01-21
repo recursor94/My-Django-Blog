@@ -42,13 +42,7 @@
       <div id=titlelink class="four columns">
 	<h5><a href="/blog/">Programmer Plebeian</a></h5>
       </div>
-      <div id="nav" class="u-pull-right">
-	<ul>
-	  <li><a href="/blog/">Home</a></li>
-	  <li><a href="/blog/about">About</a></li>
-	  <li><a href="/blog/">Blog</a></li>
-	  <li><a href="/blog/contact">Contact</a></li>
-	</ul>
+      {{navbar|safe}}
       </div>
     </div>
     <div class="row">
