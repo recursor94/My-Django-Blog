@@ -17,3 +17,13 @@ def view_post(request, post_id):
         raise Http404("Post does not exist")
     return render(request, 'blog/posts.djhtml', {'post': post})
     
+
+def generate_navbar() {
+    html = "
+    <div id=\"nav\" class=\"u-pull-right\">
+    <ul>
+	  <li><a href=\"/blog/\">Home</a></li>
+	  <li><a href=\"/blog/about\">About</a></li>
+	  <li><a href=\"/blog/\">Blog</a></li>
+	  <li><a href=\"/blog/contact\">Contact</a></li>";
+}
