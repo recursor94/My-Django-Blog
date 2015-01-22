@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from  blog.models import Post
 from django.template import RequestContext, loader
+from django.template.defaultfilters import slugify
+import urllib2 #to convert url to title string
+import pdb; 
 # Create your views here.
 
 def index(request):
@@ -11,11 +14,16 @@ def index(request):
 
 
 def view_post(request, post_name):
+#    pdb.set_trace()
     try:
-        post = Post.objects.get(title_text=post_name)
+        
+        post = Post.objects.get(title_text=(slugify(post_name)))
+
 
     except Post.DoesNotExist:
         raise Http404("Post does not exist")
+        print(post_name + "DEBUG\n")
+        print(post)
 
     return render(request, 'blog/posts.djhtml', {'post': post})
     
