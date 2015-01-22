@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.template.defaultfilters import slugify
 
 
 # Create your models here.
@@ -17,9 +18,9 @@ class Post(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1);
 
-    def save(self, *arg, **kwargs):
+    def save(self, *args, **kwargs):
         if not self.id:
-            self.s = slugify(self.q)    #newly created object, set slug
+            self.slug = slugify(self.title_text)    #newly created object, set slug
         super(Post, self).save(*args, **kwargs)
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True

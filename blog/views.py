@@ -13,16 +13,14 @@ def index(request):
     return render(request, 'blog/index.djhtml', context)
 
 
-def view_post(request, post_name):
+def view_post(request, post_slug):
 
     #original method of unslugifying alone will fail if any symbols like commas and colons
     #are in title, 
 
     try:
-#        post_name =  post_name.encode('ascii','ignore') #un-unicode name
       
-        unslugified_post_name = post_name.replace('-', ' ')  #will get slugified name, replace all hyphens with spaces
-        post = Post.objects.filter(title_text__iexact=unslugified_post_name) #set to lower first
+        post = Post.objects.get(slug=post_slug) #set to lower first
 
 
     except Post.DoesNotExist:
