@@ -1,8 +1,7 @@
-import datetime
-
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+import datetime
 
 
 # Create your models here.
@@ -16,7 +15,8 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title_text + "\n"+ self.pub_date.__str__() + "\n" + self.content
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1);
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
     def save(self, *args, **kwargs):
         if not self.id:
