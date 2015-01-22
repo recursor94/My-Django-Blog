@@ -20,11 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '-vdv1bqu1lloko+cp^7r@@aw@2x1+v%br!=!8g(+3n&qz1@z2b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['programmer-plebeian.herokuapp.com']
 
 
 # Application definition
@@ -85,12 +82,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Allow all host headers
 #ALLOWED_HOSTS = ['*'] I don't need this I already have one, and having two doesn't help
@@ -105,4 +98,4 @@ STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, 'static'),
     os.path.join('', '/app/blog/static/'),
 )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
