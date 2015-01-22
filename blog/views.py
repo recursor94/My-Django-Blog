@@ -19,7 +19,7 @@ def view_post(request, post_name):
 #        post_name =  post_name.encode('ascii','ignore') #un-unicode name
       
         unslugified_post_name = post_name.replace('-', ' ')  #will get slugified name, replace all hyphens with spaces
-        post = Post.objects.get(title_text=unslugified_post_name.title())
+        post = Post.objects.get(title_text__iexact=unslugified_post_name.lower().title()) #set to lower first
 
 
     except Post.DoesNotExist:
