@@ -50,7 +50,7 @@
        	  <ul>
 	    {% if latest_post_list %}
 	      {% for post in latest_post_list %}
-		<li><a href="{% url 'blog:view_post' post.id %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
+		<li><a href="{% url 'blog:view_post' post.title_text|slugify %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
 	      {% endfor %}
 	  </ul>
 	    {% else %}

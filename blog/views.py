@@ -14,16 +14,16 @@ def index(request):
 
 
 def view_post(request, post_name):
-#    pdb.set_trace()
+
     try:
-        
-        post = Post.objects.get(title_text=(slugify(post_name)))
+#        post_name =  post_name.encode('ascii','ignore') #un-unicode name
+      
+        unslugified_post_name = post_name.replace('-', ' ')  #will get slugified name, replace all hyphens with spaces
+        post = Post.objects.get(title_text=unslugified_post_name.title())
 
 
     except Post.DoesNotExist:
         raise Http404("Post does not exist")
-        print(post_name + "DEBUG\n")
-        print(post)
 
     return render(request, 'blog/posts.djhtml', {'post': post})
     
