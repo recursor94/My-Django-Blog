@@ -9,13 +9,15 @@ def index(request):
     context = {'latest_post_list': latest_post_list, 'navbar': generate_navbar()}
     return render(request, 'blog/index.djhtml', context)
 
-def view_post(request, post_id):
+
+def view_post(request, post_name):
     try:
-        post = Post.objects.get(pk=post_id)
+        post = Post.objects.get(title_text=post_name)
 
     except Post.DoesNotExist:
         raise Http404("Post does not exist")
-    return render(request, 'blog/posts.djhtml', {'post': post, 'navbar': generate_navbar()})
+
+    return render(request, 'blog/posts.djhtml', {'post': post})
     
 
 def generate_navbar():
