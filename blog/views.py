@@ -8,8 +8,8 @@ import pdb;
 # Create your views here.
 
 def index(request):
-    latest_post_list = Post.objects.order_by('-pub_date')[:5]
-    context = {'latest_post_list': latest_post_list, 'navbar': generate_navbar()}
+    post_list = Post.objects.order_by('-pub_date')
+    context = {'post_list': post_list, 'navbar': generate_navbar()}
     return render(request, 'blog/index.djhtml', context)
 
 
