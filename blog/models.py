@@ -16,9 +16,16 @@ class Post(models.Model):
         return self.title_text + "\n"+ self.pub_date.__str__() + "\n" + self.content
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1);
+
+    def save(self, *arg, **kwargs):
+        if not self.id:
+            self.s = slugify(self.q)    #newly created object, set slug
+        super(Post, self).save(*args, **kwargs)
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
+
+
 
 
     
