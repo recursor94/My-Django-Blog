@@ -10,7 +10,7 @@ class Post(models.Model):
     title_text = models.CharField(max_length = 500)
     pub_date = models.DateTimeField('date published')
     content =  models.TextField()
-    slug = models.SlugField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=100, db_index=True, blank=True)
 
     #methods
     def __unicode__(self):
