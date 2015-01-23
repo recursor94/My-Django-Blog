@@ -9,7 +9,7 @@ import pdb;
 
 def index(request):
     post_list = Post.objects.order_by('-pub_date')
-    context = {'post_list': post_list, 'navbar': generate_navbar()}
+    context = {'post_list': post_list}
     return render(request, 'blog/index.djhtml', context)
 
 
@@ -27,16 +27,6 @@ def view_post(request, post_slug):
         raise Http404("Post does not exist")
 
     return render(request, 'blog/posts.djhtml', {'post': post})
-    
-
-def generate_navbar():
-    html = """<div id=\"nav\" class=\"u-pull-right\">
-    <ul>
-	  <li><a href=\"/blog/\">Home</a></li>
-	  <li><a href=\"/blog/about\">About</a></li>
-	  <li><a href=\"/blog/\">Blog</a></li>
-	  <li><a href=\"/blog/contact\">Contact</a></li>"""
-    return html
 
 
 def about(request):
