@@ -1,67 +1,18 @@
+{% extends "blog/navbar.djhtml" %}
 {% load staticfiles %}
-  <!-- <h1>Welcome to Programmer Plebeian </h1>
-  <h2>A Budding Programmer's Paradise</h2> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Programmer Plebeian</title>
-  <meta name="" content="">
-  <meta name="author" content="Andrew Spano">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600'" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="{% static 'blog/normalize.css' %}"/>
-  <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}"/>
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="{% static 'blog/images/favicon.png' %}"/>
 
 
-</head>
-<body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div id=titlelink class="four columns">
-	<h5><a href="/blog/">Programmer Plebeian</a></h5>
-      </div>
-      {{navbar|safe}}
-      </div>
-    </div>
-    <div class="row">
-      <div id="postindex" class="eleven columns">
-       	  <ul>
-	    {% if post_list %}
-	      {% for post in post_list %}
-		<li><a href="{% url 'blog:view_post' post.slug %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
-	      {% endfor %}
-	  </ul>
-	    {% else %}
-	  <p>There is no blog post available here</p>
-	    {% endif %}
-	</section>
-      </div>
-    </div>
-  </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
-</html>
+{% block content %}
+  
+  <div id="postindex" class="eleven columns">
+    <ul>
+      {% if post_list %}
+	{% for post in post_list %}
+	  <li><a href="{% url 'blog:view_post' post.slug %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
+	{% endfor %}
+    </ul>
+      {% else %}
+    <p>There is no blog post available here</p>
+      {% endif %}
+{% endblock %}}
+      
