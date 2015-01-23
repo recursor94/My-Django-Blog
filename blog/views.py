@@ -37,3 +37,15 @@ def generate_navbar():
 	  <li><a href=\"/blog/\">Blog</a></li>
 	  <li><a href=\"/blog/contact\">Contact</a></li>"""
     return html
+
+
+def about(request):
+    """
+    View for the about page
+    """
+    return render(request, 'blog/index.djhtml', context)
+def contact(request):
+    """
+    view for the contact page
+    """
+    return render(request, 'blog/index.djhtml', context)
