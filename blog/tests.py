@@ -22,3 +22,13 @@ class PostMethodTests(TestCase):
         time = timezone.now() - datetime.timedelta(days=30)
         distant_past_post = Post(pub_date=time)
         self.assertEqual(distant_past_post.was_published_recently(), False)
+
+        def test_was_published_recently_with_near_past_question(self):
+            """
+            was published_recently should return True for posts whose pub_date
+            was in the recent past--in this case less than or equal to one day
+            old
+            """
+            time=timezone.now() - datetime(days=1)
+            near_past_post = Post(pub_date=time)
+            self.assertEqual(distant_past_post.was_published_recently(), True)
