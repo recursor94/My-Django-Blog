@@ -3,16 +3,18 @@
 
 
 {% block content %}
-  
-  <div id="postindex" class="eleven columns">
-    <ul>
-      {% if post_list %}
-	{% for post in post_list %}
-	  <li><a href="{% url 'blog:view_post' post.slug %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
-	{% endfor %}
-    </ul>
-      {% else %}
-    <p>There is no blog post available here</p>
-      {% endif %}
-{% endblock %}}
-      
+  <div class="row">
+    <div id="postindex" class="eleven columns">
+      <ul>
+	{% if post_list %}
+	  {% for post in post_list %}
+	    <li><a href="{% url 'blog:view_post' post.slug %}">{{post.title_text}}</a>&nbsp;{{post.pub_date}}</li>
+	  {% endfor %}
+      </ul>
+	{% else %}
+      <p>There is no blog post available here</p>
+	{% endif %}
+    </div>
+  </div>
+{% endblock %}
+
