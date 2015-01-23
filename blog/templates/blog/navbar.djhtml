@@ -1,8 +1,10 @@
 {% load staticfiles %}
 <!DOCTYPE html>
+<html lang="utf-8">
 <html>
   <head>
     <meta charset="utf-8">
+    <title>{% block title %}Programmer Plebeian {% endblock %}</title>
     <meta name="" content="">
     <meta name="author" content="Andrew Spano">
     <!-- Mobile Specific Metas
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="{% static 'blog/skeleton.css' %}"/>
     <link rel="stylesheet" href="{% static 'blog/style.css' %}"/>
     
-    <title>{% block title %}Programmer Plebeian {% endblock %}</title>
+
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     {% block icon %}
@@ -25,21 +27,21 @@
     {% endblock %}
   </head>
   <body>
-    <div id = "container">
+    <div class = "container">
       <div class="row">
-	<div id=titleink class="four columns">
+	<div id=titlelink class="four columns">
 	  <h5><a href="/blog/">Programmer Plebeian</a></h5>
 	</div>
-      </div>
-      <div id= "navbar">
+      <div id= "nav" class="u-pull-right">
 	{% block navbar  %}
 	  
-	  <ul id="nav">
+	  <ul id="navbar">
 	    <li>{% block nav-home %}<a href="{% url 'blog:index' %}">Home</a>{% endblock %}</li>
-	    <li>{% block nav-about %}<a href="{% url about 'blog:about'%}">About</a>{% endblock %}</li>
+	    <li>{% block nav-about %}<a href="{% url 'blog:about' %}">About</a>{% endblock %}</li>
 	    <li>{% block nav-contact %}<a href="{% url 'blog:contact' %}">Contact</a>{% endblock %}</li>
-	    <li>{% block nav-blog %}<a href="{% url 'blog:index' %}">blog</a>{% endblock %}</li>
+	    <li>{% block nav-blog %}<a href="{% url 'blog:index' %}">Blog</a>{% endblock %}</li>
 	  </ul>
+      </div>
       </div>
     {% endblock %}
       {% block content %} {% endblock %}
