@@ -67,3 +67,10 @@ a#blogtitle  {
 #postarea {
     margin-top: 50px;
 }
+
+#contentbody a{
+    color:black;
+}
+#contentbody a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,10 @@
+{% extends "blog/navbar.djhtml" %}
+
+{% block content %}
+  <div class = "row">
+    <div id="contentbody" class="eleven columns">
+      <p>
+	You can contact me at 
+	<a href="mailto:werdnaonaps@gmail.com">werdnaonaps@gmail.com</a>
+      </p>
+{% endblock %}

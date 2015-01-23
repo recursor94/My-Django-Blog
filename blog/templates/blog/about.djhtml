@@ -1,0 +1,9 @@
+{% extends "blog/navbar.djhtml" %}
+
+{% block content  %}
+  <div  class="row">
+    <div id = "aboutbody" class="eleven columns"</div>
+      <p>My name is <strong>Andrew Spano</strong>.  I'm a Computer Science college student and aspiring <strong>software engineer</strong>.</p><p>This website is my personal blog which I developed myself using python and the DJango web framework, and skeleton.css along with custom css for the page layout.</p><p>This blog is dedicated to exploring technical issues pertaining to programming, cyber security, game design, or any other field relating to IT.</p><p>This blog will also occassionally explore tangential topics such as game reviews, current events and even politics</p>
+    </div>
+  </div>
+{% endblock %}
