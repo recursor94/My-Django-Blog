@@ -33,9 +33,9 @@ def about(request):
     """
     View for the about page
     """
-    return render(request, 'blog/index.djhtml', context)
+    return render(request, 'blog/about.djhtml')
 def contact(request):
     """
     view for the contact page
     """
-    return render(request, 'blog/index.djhtml', context)
+    return render(request, 'blog/contact.djhtml')
