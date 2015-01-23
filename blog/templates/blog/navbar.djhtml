@@ -36,9 +36,9 @@
 	  
 	  <ul id="nav">
 	    <li>{% block nav-home %}<a href="{% url 'blog:index' %}">Home</a>{% endblock %}</li>
-	    <li>{% block nav-about %}<a href="{% url about %}">About</a>{% endblock %}</li>
-	    <li>{% block nav-contact %}<a href="{% url contact %}">Contact</a>{% endblock %}</li>
-	    <li>{% block nav-blog %}<a href="{% url blog %}">blog</a>{% endblock %}</li>
+	    <li>{% block nav-about %}<a href="{% url about 'blog:about'%}">About</a>{% endblock %}</li>
+	    <li>{% block nav-contact %}<a href="{% url 'blog:contact' %}">Contact</a>{% endblock %}</li>
+	    <li>{% block nav-blog %}<a href="{% url 'blog:index' %}">blog</a>{% endblock %}</li>
 	  </ul>
       </div>
     {% endblock %}
